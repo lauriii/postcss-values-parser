@@ -26,6 +26,12 @@ test('integration', (t) => {
 
   root = parse('1 / -1');
   t.is(root.nodes.length, 3);
+
+  root = parse('1em/var(--line-height)');
+  t.is(root.nodes.length, 3);
+
+  root = parse('1em / var(--line-height)');
+  t.is(root.nodes.length, 3);
 });
 
 test('manipulation', (t) => {
